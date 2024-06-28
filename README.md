@@ -61,4 +61,4 @@ There are authentication file for authentication purposes. Also it includes:
 As it is an backend project that interacts with frontend which does not includde that much visibility like front-end. 
 Learning new tools and fixing bugs were not easy but an interesting experience indeed.
 
-~created by Jarin Mahmud~
+### created by Jarin Mahmud
