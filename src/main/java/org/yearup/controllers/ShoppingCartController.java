@@ -1,5 +1,4 @@
 package org.yearup.controllers;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
@@ -9,11 +8,9 @@ import org.yearup.data.ProductDao;
 import org.yearup.data.ShoppingCartDao;
 import org.yearup.data.UserDao;
 import org.yearup.models.ShoppingCart;
-import org.yearup.models.ShoppingCartItem;
 import org.yearup.models.User;
-
 import java.security.Principal;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("cart")
@@ -21,7 +18,7 @@ import java.util.Map;
 @Secured({"ROLE_ADMIN", "ROLE_USER"})
 public class ShoppingCartController
 {
-    // a shopping cart requires
+
     private final ShoppingCartDao shoppingCartDao;
     private final UserDao userDao;
     private final ProductDao productDao;
@@ -33,15 +30,15 @@ public class ShoppingCartController
         this.productDao = productDao;
     }
 
-    // each method in this controller requires a Principal object as a parameter
+
     @GetMapping("")
     public ShoppingCart getCart(Principal principal)
     {
         try
         {
-            // get the currently logged-in username
+
             String userName = principal.getName();
-            // find database user by userId
+
             User user = userDao.getByUserName(userName);
             int userId = user.getId();
 
@@ -58,9 +55,9 @@ public class ShoppingCartController
     public ShoppingCart addItemToCart(Principal principal, @PathVariable int product_id) {
         try
         {
-            // get the currently logged-in username
+            // login username
             String userName = principal.getName();
-            // find database user by userId
+
             User user = userDao.getByUserName(userName);
             int userId = user.getId();
 
@@ -81,9 +78,9 @@ public class ShoppingCartController
     public int updateItemInCart(Principal principal, @PathVariable int product_id) {
         try
         {
-            // get the currently logged-in username
+
             String userName = principal.getName();
-            // find database user by userId
+
             User user = userDao.getByUserName(userName);
             int userId = user.getId();
 
@@ -99,9 +96,9 @@ public class ShoppingCartController
     public ShoppingCart deleteCart(Principal principal) {
         try
         {
-            // get the currently logged-in username
+
             String userName = principal.getName();
-            // find database user by userId
+
             User user = userDao.getByUserName(userName);
             int userId = user.getId();
 

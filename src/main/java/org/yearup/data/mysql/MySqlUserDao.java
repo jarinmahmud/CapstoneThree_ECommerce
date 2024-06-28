@@ -100,7 +100,7 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
 
     @Override
     public User getByUserName(String username)
-    {
+    {   //query input
         String sql = "SELECT * " +
                 " FROM users " +
                 " WHERE username = ?";

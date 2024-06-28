@@ -27,7 +27,7 @@ public class CategoriesController
     }
 
 
-    // get category
+    // getting category
     @GetMapping("")
     public List<Category> getAll()
     {
@@ -47,7 +47,7 @@ public class CategoriesController
         return productDao.listByCategoryId(categoryId);
     }
 
-    // add a category
+    // adding a category
     @PostMapping("")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Category addCategory(@RequestBody Category category)
@@ -56,7 +56,7 @@ public class CategoriesController
     }
 
 
-    // update a category
+    // updating a category
     @PutMapping("/{categoryId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void updateCategory(@PathVariable int categoryId, @RequestBody Category category)
@@ -65,7 +65,7 @@ public class CategoriesController
     }
 
 
-    // delete a category
+    // deleting a category
     @DeleteMapping("/{categoryId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteCategory(@PathVariable int categoryId)

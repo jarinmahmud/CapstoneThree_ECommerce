@@ -51,7 +51,7 @@ public class ProductsController {
         }
     }
 
-    // create product
+
     @PostMapping("")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Product addProduct(@RequestBody Product product) {
@@ -62,7 +62,7 @@ public class ProductsController {
         }
     }
 
-    // update
+
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void updateProduct(@PathVariable int id, @RequestBody Product product) {
@@ -73,7 +73,7 @@ public class ProductsController {
         }
     }
 
-    // delete
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteProduct(@PathVariable int id) {

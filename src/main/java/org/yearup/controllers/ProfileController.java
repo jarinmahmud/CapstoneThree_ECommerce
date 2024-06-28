@@ -32,10 +32,10 @@ public class ProfileController {
     public Profile getProfile(Principal principal) {
         try
         {
-            // current user
+
             String userName = principal.getName();
 
-            // find database user by userId
+            //getting user by userId
             User user = userDao.getByUserName(userName);
             int userId = user.getId();
 
@@ -43,19 +43,19 @@ public class ProfileController {
             if (profile == null) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid");
             }
-            // return the profile
+
             return profile;
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
     }
 
-    // updates existing profile
+    //update
     @PutMapping("")
     public void updateProfile(@RequestBody Profile profile, Principal principal) {
         try
         {
-            // get current user/profile
+            // current user
             String userName = principal.getName();
 
             User user = userDao.getByUserName(userName);
