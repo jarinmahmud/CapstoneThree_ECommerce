@@ -9,8 +9,6 @@ import org.yearup.models.ShoppingCartItem;
 
 import javax.sql.DataSource;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class MySqlShoppingCartDao extends MySqlDaoBase implements ShoppingCartDao
@@ -47,6 +45,21 @@ public class MySqlShoppingCartDao extends MySqlDaoBase implements ShoppingCartDa
         }
 
         return cart;
+    }
+
+    @Override
+    public void addItemToCart(int userId, int product_id) {
+
+    }
+
+    @Override
+    public int updateItemInCart(int userId, int product_id) {
+        return 0;
+    }
+
+    @Override
+    public int deleteCart(int userId) {
+        return 0;
     }
 
 
