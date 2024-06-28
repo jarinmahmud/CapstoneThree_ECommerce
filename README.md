@@ -1,4 +1,4 @@
-## CapstonThree_ECommerce
+## CapstoneThree_ECommerce
 ## Purpose:
 Testing with API an e-commerce platform naming easyshop. It features: 
 - administrative controls
