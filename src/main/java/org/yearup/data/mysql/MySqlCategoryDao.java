@@ -3,6 +3,7 @@ package org.yearup.data.mysql;
 import org.springframework.stereotype.Component;
 import org.yearup.data.CategoryDao;
 import org.yearup.models.Category;
+import org.yearup.models.ShoppingCartItem;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -18,6 +19,26 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     public MySqlCategoryDao(DataSource dataSource)
     {
         super(dataSource);
+    }
+
+    @Override
+    public void addProductToCart(int userId, ShoppingCartItem item) {
+
+    }
+
+    @Override
+    public void updateProductInCart(int userId, int productId, int quantity) {
+
+    }
+
+    @Override
+    public void clearCart(int userId) {
+
+    }
+
+    @Override
+    public boolean contains(int userId, int productId) {
+        return false;
     }
 
     @Override
